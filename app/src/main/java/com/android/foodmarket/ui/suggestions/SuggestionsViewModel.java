@@ -1,16 +1,16 @@
-package com.android.foodmarket.ui.slideshow;
+package com.android.foodmarket.ui.suggestions;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class SuggestionsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public SuggestionsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is suggestions fragment");
     }
 
     public LiveData<String> getText() {

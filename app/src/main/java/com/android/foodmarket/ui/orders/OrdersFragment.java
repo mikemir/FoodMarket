@@ -1,4 +1,4 @@
-package com.android.foodmarket.ui.slideshow;
+package com.android.foodmarket.ui.orders;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.android.foodmarket.R;
 
-public class SlideshowFragment extends Fragment {
+public class OrdersFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private OrdersViewModel catalogViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel = new ViewModelProvider(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        catalogViewModel = new ViewModelProvider(this).get(OrdersViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_catalog, container, false);
+        final TextView textView = root.findViewById(R.id.text_gallery);
+        catalogViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

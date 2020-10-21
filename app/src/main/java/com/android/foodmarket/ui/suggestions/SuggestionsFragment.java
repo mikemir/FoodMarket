@@ -1,4 +1,4 @@
-package com.android.foodmarket.ui.catalog;
+package com.android.foodmarket.ui.suggestions;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.android.foodmarket.R;
 
-public class CatalogFragment extends Fragment {
+public class SuggestionsFragment extends Fragment {
 
-    private CatalogViewModel catalogViewModel;
+    private SuggestionsViewModel suggestionsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        catalogViewModel = new ViewModelProvider(this).get(CatalogViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_catalog, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        catalogViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        suggestionsViewModel = new ViewModelProvider(this).get(SuggestionsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        final TextView textView = root.findViewById(R.id.text_slideshow);
+        suggestionsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

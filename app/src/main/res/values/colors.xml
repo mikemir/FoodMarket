@@ -12,8 +12,8 @@
     <color name="red_700">#d32f2f</color>
     <color name="red_900">#b71c1c</color>
 
-    <color name="yellow_700">#FF000000</color>
-    <color name="yellow_900">#FF000000</color>
+    <color name="yellow_700">#ffa000</color>
+    <color name="yellow_900">#ff6f00</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
