@@ -5,6 +5,7 @@ import java.util.List;
 import  com.android.foodmarket.R;
 
 public class Saucer {
+    private int id;
     private String name;
     private String description;
     private double price;
@@ -25,7 +26,7 @@ public class Saucer {
         COMIDAS_POPULARES.add(new Saucer(5, "Camarones Tismados", R.drawable.camarones));
         COMIDAS_POPULARES.add(new Saucer(3.2f, "Rosca Herbárea", R.drawable.rosca));
         COMIDAS_POPULARES.add(new Saucer(12f, "Sushi Extremo", R.drawable.sushi));
-        COMIDAS_POPULARES.add(new Saucer(9, "Sandwich Deli", R.drawable.sandwich));
+        COMIDAS_POPULARES.add(new Saucer(8.99, "Sandwich Deli", R.drawable.sandwich));
         COMIDAS_POPULARES.add(new Saucer(34f, "Lomo De Cerdo Austral", R.drawable.lomo_cerdo));
 
         PLATILLOS.add(new Saucer(5, "Camarones Tismados", R.drawable.camarones));
