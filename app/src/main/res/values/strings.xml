@@ -8,6 +8,6 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Menú</string>
-    <string name="menu_gallery">Pedidos</string>
-    <string name="menu_slideshow">Sugerencias</string>
+    <string name="menu_orders">Pedidos</string>
+    <string name="menu_suggestions">Sugerencias</string>
 </resources>

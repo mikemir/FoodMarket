@@ -11,10 +11,14 @@
     <color name="red_500">#f44336</color>
     <color name="red_700">#d32f2f</color>
     <color name="red_900">#b71c1c</color>
+    <color name="red_900_transp">#4DB71C1C</color>
 
     <color name="yellow_700">#ffa000</color>
     <color name="yellow_900">#ff6f00</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="black_transp">#4D000000</color>
+    <color name="white_transp">#4DFFFFFF</color>
 </resources>
