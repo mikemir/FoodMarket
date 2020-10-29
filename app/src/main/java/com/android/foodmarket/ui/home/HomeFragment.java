@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
 
         rvComidas = root.findViewById(R.id.rvFood);
         rvComidas.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rvComidas.setAdapter(new HomeRecyclerViewAdapter());
+        rvComidas.setAdapter(new HomeRecyclerViewAdapter(root.getContext()));
         //final TextView textView = root.findViewById(R.id.text_home);
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
 //            @Override

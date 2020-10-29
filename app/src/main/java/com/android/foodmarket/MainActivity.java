@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         switch (item.getItemId()) {
             case R.id.logout:
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
