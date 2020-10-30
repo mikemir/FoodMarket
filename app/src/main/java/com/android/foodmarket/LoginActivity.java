@@ -62,6 +62,10 @@ public class LoginActivity extends AppCompatActivity {
                 else{
                     String message = "Usuario o contraseña inválido.";
                     Toast.makeText(LoginActivity.this, message, Toast.LENGTH_LONG).show();
+                    //Eliminar
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });

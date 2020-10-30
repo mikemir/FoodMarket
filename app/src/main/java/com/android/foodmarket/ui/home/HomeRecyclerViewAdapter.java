@@ -18,9 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder> implements View.OnClickListener {
+public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder> {
 
-    private View.OnClickListener listener;
+    private RecyclerViewOnClickListener listener;
     private final Context context;
     private List<Saucer> listSaucers;
 
@@ -33,7 +33,6 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_home_item_list, parent, false);
-        view.setOnClickListener(this);
         return new ViewHolder(view);
     }
 
@@ -54,22 +53,15 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         return listSaucers.size();
     }
 
-    public void setOnClickListener(View.OnClickListener listener){
+    public void setOnClickListener(RecyclerViewOnClickListener listener){
         this.listener = listener;
     }
 
-    @Override
-    public void onClick(View view) {
-        if(listener != null){
-            listener.onClick((view));
-        }
-        else{
-            Intent intent = new Intent(context, SaucerDetailsActivity.class);
-            context.startActivity(intent);
-        }
+    public interface RecyclerViewOnClickListener{
+        void onClick(View view, int position);
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // Campos respectivos de un item
         public TextView nombre;
         public TextView precio;
@@ -80,8 +72,13 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
             nombre = (TextView) view.findViewById(R.id.nombre_comida);
             precio = (TextView) view.findViewById(R.id.precio_comida);
             imagen = (ImageView) view.findViewById(R.id.miniatura_comida);
+            view.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View view) {
+            listener.onClick(view, getAdapterPosition());
+        }
     }
 
 }
