@@ -2,33 +2,29 @@ package com.android.foodmarket.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
 import  com.android.foodmarket.R;
 
 public class Saucer {
-    private int id;
+    private String id;
     private String name;
     private String description;
     private double price;
     private int image;
 
     public Saucer(double price, String name, int image){
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.price = price;
         this.image = image;
     }
 
-    public static final List<Saucer> COMIDAS_POPULARES = new ArrayList<>();
     public static final List<Saucer> BEBIDAS = new ArrayList<>();
     public static final List<Saucer> POSTRES = new ArrayList<>();
     public static final List<Saucer> PLATILLOS = new ArrayList<>();
 
     static {
-        COMIDAS_POPULARES.add(new Saucer(5, "Camarones Tismados", R.drawable.camarones));
-        COMIDAS_POPULARES.add(new Saucer(3.2f, "Rosca Herbárea", R.drawable.rosca));
-        COMIDAS_POPULARES.add(new Saucer(12f, "Sushi Extremo", R.drawable.sushi));
-        COMIDAS_POPULARES.add(new Saucer(8.99, "Sandwich Deli", R.drawable.sandwich));
-        COMIDAS_POPULARES.add(new Saucer(34f, "Lomo De Cerdo Austral", R.drawable.lomo_cerdo));
-
         PLATILLOS.add(new Saucer(5, "Camarones Tismados", R.drawable.camarones));
         PLATILLOS.add(new Saucer(3.2f, "Rosca Herbárea", R.drawable.rosca));
         PLATILLOS.add(new Saucer(12f, "Sushi Extremo", R.drawable.sushi));

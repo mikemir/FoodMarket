@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodMarket">
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".ForgotPasswActivity" />
+        <activity
+            android:name=".SaucerDetailsActivity"
+            android:label="@string/title_activity_saucer_details"
+            android:theme="@style/Theme.FoodMarket.NoActionBar"></activity>
+        <activity android:name=".RegisterActivity" android:parentActivityName=".LoginActivity" />
+        <activity android:name=".ForgotPasswActivity" android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/Theme.FoodMarket.NoActionBar">

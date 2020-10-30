@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.foodmarket.R;
+import com.android.foodmarket.models.Saucer;
 
 public class HomeFragment extends Fragment {
 
@@ -28,14 +29,8 @@ public class HomeFragment extends Fragment {
 
         rvComidas = root.findViewById(R.id.rvFood);
         rvComidas.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rvComidas.setAdapter(new HomeRecyclerViewAdapter(root.getContext()));
-        //final TextView textView = root.findViewById(R.id.text_home);
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
+        rvComidas.setAdapter(new HomeRecyclerViewAdapter(root.getContext(), Saucer.BEBIDAS));
+
         return root;
     }
 }

@@ -35,8 +35,10 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:id="@+id/etUserName"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:inputType="textPersonName"
             android:hint="Juan Camilo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -49,8 +51,10 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:id="@+id/etUserLastName"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:inputType="textPersonName"
             android:hint="Perez Perez"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -63,20 +67,23 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:id="@+id/etUserEmail"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:inputType="textEmailAddress"
             android:hint="correo@mail.com"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:text="Contraseña:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:id="@+id/etUserPassword"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:inputType="textPassword"
@@ -92,6 +99,7 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:id="@+id/etRepeatUserPassword"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:inputType="textPassword"
@@ -101,7 +109,7 @@
 
         <Button
             android:id="@+id/btCreateAccount"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:layout_marginBottom="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"

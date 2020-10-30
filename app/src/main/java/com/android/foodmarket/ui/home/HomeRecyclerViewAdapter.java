@@ -5,26 +5,28 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.foodmarket.LoginActivity;
 import com.android.foodmarket.R;
-import com.android.foodmarket.RegisterActivity;
+import com.android.foodmarket.SaucerDetailsActivity;
 import com.android.foodmarket.models.Saucer;
 import com.bumptech.glide.Glide;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder> implements View.OnClickListener {
 
     private View.OnClickListener listener;
     private final Context context;
+    private List<Saucer> listSaucers;
 
-    public HomeRecyclerViewAdapter(Context context){
+    public HomeRecyclerViewAdapter(Context context, List<Saucer> list){
         this.context = context;
+        this.listSaucers = list;
     }
 
     @NonNull
@@ -37,7 +39,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Saucer item = Saucer.COMIDAS_POPULARES.get(position);
+        Saucer item = listSaucers.get(position);
 
         Glide.with(holder.itemView.getContext())
                 .load(item.getImage())
@@ -49,7 +51,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
 
     @Override
     public int getItemCount() {
-        return Saucer.COMIDAS_POPULARES.size();
+        return listSaucers.size();
     }
 
     public void setOnClickListener(View.OnClickListener listener){
@@ -62,7 +64,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
             listener.onClick((view));
         }
         else{
-            Intent intent = new Intent(context, RegisterActivity.class);
+            Intent intent = new Intent(context, SaucerDetailsActivity.class);
             context.startActivity(intent);
         }
     }

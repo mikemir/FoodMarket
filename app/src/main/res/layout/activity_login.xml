@@ -35,11 +35,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Correo:"
-        app:layout_constraintStart_toStartOf="@id/etCorreo"
+        app:layout_constraintStart_toStartOf="@id/etUserEmail"
         app:layout_constraintTop_toBottomOf="@id/imageView" />
 
     <EditText
-        android:id="@+id/etCorreo"
+        android:id="@+id/etUserEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -60,11 +60,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Contrasena:"
-        app:layout_constraintStart_toStartOf="@id/etContrasenia"
-        app:layout_constraintTop_toBottomOf="@id/etCorreo" />
+        app:layout_constraintStart_toStartOf="@id/etUserPassword"
+        app:layout_constraintTop_toBottomOf="@id/etUserEmail" />
 
     <EditText
-        android:id="@+id/etContrasenia"
+        android:id="@+id/etUserPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
@@ -86,8 +86,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/etContrasenia"
-        app:layout_constraintEnd_toEndOf="@id/etContrasenia" />
+        app:layout_constraintTop_toBottomOf="@id/etUserPassword"
+        app:layout_constraintEnd_toEndOf="@id/etUserPassword" />
 
     <TextView
         android:id="@+id/tvRegistrase"
@@ -97,8 +97,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/etContrasenia"
-        app:layout_constraintStart_toStartOf="@id/etContrasenia" />
+        app:layout_constraintTop_toBottomOf="@id/etUserPassword"
+        app:layout_constraintStart_toStartOf="@id/etUserPassword" />
 
     <Button
         android:id="@+id/btLogin"
