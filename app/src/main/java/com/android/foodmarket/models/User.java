@@ -15,11 +15,23 @@ public class User {
     public static List<User> USERS = new ArrayList<>();
 
     static {
-        USERS.add(new User("prueba@mail.com", "prueba123"));
-        USERS.add(new User("ronal@mail.com", "prueba123"));
+        USERS.add(new User("admin@mail.com", "prueba123"));
+        USERS.add(new User("ronald@mail.com", "prueba123"));
     }
 
-    public static boolean getValidUser(String userName, String userPass){
+    public static boolean exist(String email){
+        boolean result = false;
+
+        for (User item:USERS) {
+            if(email.equals(item.getEmail())){
+                result = true;
+            }
+        }
+
+        return result;
+    }
+
+    public static boolean isValidUser(String userName, String userPass){
         boolean result = false;
 
         for (User item:USERS) {

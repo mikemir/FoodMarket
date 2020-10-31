@@ -52,15 +52,15 @@ public class LoginActivity extends AppCompatActivity {
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
 
-                if(User.getValidUser(email, password)){
+                if(User.isValidUser(email, password)){
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.putExtra("emailUser", email);
                     startActivity(intent);
                     finish();
                 }
                 else{
                     String message = "Usuario o contraseña inválido.";
                     Toast.makeText(LoginActivity.this, message, Toast.LENGTH_LONG).show();
-
                 }
             }
         });

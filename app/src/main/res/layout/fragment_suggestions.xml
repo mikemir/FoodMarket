@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:id="@+id/etSuggestion"
         android:inputType="textMultiLine"
         android:gravity="top"
         android:hint="Esperamos que hayas disfrautado al maximo :D"

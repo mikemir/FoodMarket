@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.foodmarket.models.User;
+
 public class ForgotPasswActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btSendEmailForgotPassword;
@@ -46,6 +48,12 @@ public class ForgotPasswActivity extends AppCompatActivity implements View.OnCli
 
         if(email.length() <= 0 || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             etUserEmail.setError("Email ingresado inválido.");
+            etUserEmail.requestFocus();
+            return;
+        }
+
+        if(!User.exist(email)){
+            etUserEmail.setError("No hay ningún usuario registrado con el correo: " + email + ".");
             etUserEmail.requestFocus();
             return;
         }

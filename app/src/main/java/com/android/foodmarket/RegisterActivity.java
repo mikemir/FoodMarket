@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.foodmarket.models.User;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -96,7 +97,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        Snackbar.make(view, "Usuario creado con éxito.", BaseTransientBottomBar.LENGTH_LONG).show();
-        clearInputs();
+        if(!User.exist(userEmail)){
+            Snackbar.make(view, "Usuario creado con éxito.", BaseTransientBottomBar.LENGTH_LONG).show();
+            User.USERS.add(new User(userEmail, password));
+            clearInputs();
+        }
+        else{
+            etUserEmail.setError("El correo ya se encuentra registrado.");
+            etUserEmail.requestFocus();
+        }
     }
 }

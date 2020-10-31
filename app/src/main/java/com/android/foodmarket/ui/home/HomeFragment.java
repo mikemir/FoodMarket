@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment implements HomeRecyclerViewAdapter.Re
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        listSaucers = Saucer.BEBIDAS;
+        listSaucers = Saucer.PLATILLOS;
 
         rvComidas = root.findViewById(R.id.rvFood);
         rvComidas.setLayoutManager(new LinearLayoutManager(getActivity()));

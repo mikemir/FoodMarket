@@ -4,44 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".SaucerDetailsActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:fitsSystemWindows="true"
-        android:theme="@style/Theme.FoodMarket.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+        <TextView
+            android:id="@+id/tvName"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar">
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:background="@color/red_700"
+            android:text="Nombre platillo"
+            android:textSize="34sp" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/Theme.FoodMarket.PopupOverlay" />
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/demo_description" />
 
-    <include layout="@layout/content_scrolling" />
+        <TextView
+            android:id="@+id/tvMount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:text="$99.99"
+            android:textColor="@color/red_900"
+            android:textSize="30sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/btAddCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
