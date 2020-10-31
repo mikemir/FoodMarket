@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         String password = etUserPassword.getText().toString();
 
-        if(password.length() <= 6){
+        if(password.length() < 6){
             etUserPassword.setError("La clave debe contener al menos 6 caracteres.");
             etUserPassword.requestFocus();
             return;

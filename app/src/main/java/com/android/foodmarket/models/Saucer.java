@@ -25,6 +25,7 @@ public class Saucer {
     public static final List<Saucer> PLATILLOS = new ArrayList<>();
 
     static {
+        PLATILLOS.add(new Saucer(1.5, "Pupusas tradicionales", R.drawable.pupusas));
         PLATILLOS.add(new Saucer(5, "Camarones Tismados", R.drawable.camarones));
         PLATILLOS.add(new Saucer(3.2f, "Rosca Herbárea", R.drawable.rosca));
         PLATILLOS.add(new Saucer(12f, "Sushi Extremo", R.drawable.sushi));

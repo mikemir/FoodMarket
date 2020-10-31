@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.foodmarket.models.User;
+
 public class LoginActivity extends AppCompatActivity {
 
     Button btLogin;
@@ -47,14 +49,10 @@ public class LoginActivity extends AppCompatActivity {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                String trueEmail = "prueba@mail.com";
-                String truePassword = "prueba123";
-
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
 
-                if(email.equals(trueEmail) && password.equals(truePassword)){
+                if(User.getValidUser(email, password)){
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
@@ -62,10 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 else{
                     String message = "Usuario o contraseña inválido.";
                     Toast.makeText(LoginActivity.this, message, Toast.LENGTH_LONG).show();
-                    //Eliminar
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+
                 }
             }
         });
