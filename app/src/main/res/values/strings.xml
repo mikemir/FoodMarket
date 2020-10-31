@@ -7,6 +7,12 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="choices">
+        <item>Plato fuerte</item>
+        <item>Bebidas</item>
+        <item>Postres</item>
+    </string-array>
+
     <string name="menu_home">Menú</string>
     <string name="menu_orders">Pedidos</string>
     <string name="menu_suggestions">Sugerencias</string>

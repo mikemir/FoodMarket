@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,21 +30,47 @@ public class HomeFragment extends Fragment implements HomeRecyclerViewAdapter.Re
     private HomeViewModel homeViewModel;
     private RecyclerView rvComidas;
     private List<Saucer> listSaucers;
+    private Spinner spListMenu;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        rvComidas = root.findViewById(R.id.rvFood);
         listSaucers = Saucer.PLATILLOS;
 
-        rvComidas = root.findViewById(R.id.rvFood);
-        rvComidas.setLayoutManager(new LinearLayoutManager(getActivity()));
-        HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(root.getContext(), listSaucers);
-        adapter.setOnClickListener(this);
-        rvComidas.setAdapter(adapter);
+        spListMenu = (Spinner) root.findViewById(R.id.spListMenu);
+        spListMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+                switch (position){
+                    case 0:
+                        setListOnRecycler(view, Saucer.PLATILLOS);
+                        break;
+                    case 1:
+                        setListOnRecycler(view, Saucer.BEBIDAS);
+                        break;
+                    case 2:
+                        setListOnRecycler(view, Saucer.POSTRES);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         return root;
+    }
+
+    public void setListOnRecycler(View view, List<Saucer> listSaucers){
+        rvComidas.setLayoutManager(new LinearLayoutManager(getActivity()));
+        HomeRecyclerViewAdapter adapter = new HomeRecyclerViewAdapter(view.getContext(), listSaucers);
+        adapter.setOnClickListener(this);
+        rvComidas.setAdapter(adapter);
     }
 
     @Override
