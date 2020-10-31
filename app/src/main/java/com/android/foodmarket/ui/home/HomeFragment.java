@@ -38,7 +38,6 @@ public class HomeFragment extends Fragment implements HomeRecyclerViewAdapter.Re
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         rvComidas = root.findViewById(R.id.rvFood);
-        listSaucers = Saucer.PLATILLOS;
 
         spListMenu = (Spinner) root.findViewById(R.id.spListMenu);
         spListMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -46,15 +45,16 @@ public class HomeFragment extends Fragment implements HomeRecyclerViewAdapter.Re
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 switch (position){
                     case 0:
-                        setListOnRecycler(view, Saucer.PLATILLOS);
+                        listSaucers = Saucer.PLATILLOS;
                         break;
                     case 1:
-                        setListOnRecycler(view, Saucer.BEBIDAS);
+                        listSaucers = Saucer.BEBIDAS;
                         break;
                     case 2:
-                        setListOnRecycler(view, Saucer.POSTRES);
+                        listSaucers = Saucer.POSTRES;
                         break;
                 }
+                setListOnRecycler(view, listSaucers);
             }
 
             @Override

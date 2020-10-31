@@ -15,7 +15,7 @@
         android:background="@color/black_transp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|bottom"
+        android:layout_gravity="bottom"
         android:orientation="vertical">
 
         <TextView
