@@ -1,4 +1,4 @@
-package com.android.foodmarket;
+package com.android.foodmarket.ui.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.foodmarket.R;
 import com.android.foodmarket.models.User;
 
 public class ForgotPasswActivity extends AppCompatActivity implements View.OnClickListener {

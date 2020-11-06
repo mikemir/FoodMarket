@@ -1,4 +1,4 @@
-package com.android.foodmarket;
+package com.android.foodmarket.ui.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.foodmarket.R;
 import com.android.foodmarket.models.User;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;

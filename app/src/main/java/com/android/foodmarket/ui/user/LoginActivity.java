@@ -1,4 +1,4 @@
-package com.android.foodmarket;
+package com.android.foodmarket.ui.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.foodmarket.MainActivity;
+import com.android.foodmarket.R;
 import com.android.foodmarket.models.User;
 
 public class LoginActivity extends AppCompatActivity {

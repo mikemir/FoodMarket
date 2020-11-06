@@ -1,7 +1,6 @@
 package com.android.foodmarket.ui.home;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.foodmarket.R;
-import com.android.foodmarket.SaucerDetailsActivity;
 import com.android.foodmarket.models.Saucer;
 import com.bumptech.glide.Glide;
 
@@ -40,7 +38,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Saucer item = listSaucers.get(position);
 
-        Glide.with(holder.itemView.getContext())
+        Glide.with(context)
                 .load(item.getImage())
                 .centerCrop()
                 .into(holder.imagen);

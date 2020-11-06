@@ -9,19 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodMarket">
-        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".ui.cart.CartActivity"></activity>
         <activity
-            android:name=".SaucerDetailsActivity"
+            android:name=".ui.home.SaucerDetailsActivity"
             android:label="@string/title_activity_saucer_details"
             android:theme="@style/Theme.FoodMarket.NoActionBar" />
         <activity
-            android:name=".RegisterActivity"
-            android:parentActivityName=".LoginActivity" />
+            android:name=".ui.user.RegisterActivity"
+            android:parentActivityName=".ui.user.LoginActivity" />
         <activity
-            android:name=".ForgotPasswActivity"
-            android:parentActivityName=".LoginActivity" />
+            android:name=".ui.user.ForgotPasswActivity"
+            android:parentActivityName=".ui.user.LoginActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.user.LoginActivity"
             android:theme="@style/Theme.FoodMarket.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

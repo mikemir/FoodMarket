@@ -15,6 +15,7 @@ public class User {
     public static List<User> USERS = new ArrayList<>();
 
     static {
+        USERS.add(new User("", ""));
         USERS.add(new User("admin@mail.com", "prueba123"));
         USERS.add(new User("ronald@mail.com", "prueba123"));
     }

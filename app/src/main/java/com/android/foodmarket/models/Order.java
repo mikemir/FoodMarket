@@ -11,6 +11,10 @@ public class Order {
     private Date creationDate;
     private List<Saucer> items;
 
+    public Order(){
+
+    }
+
     public Order(int id, double totalAmount, int quantity, Date creationDate){
         this.id = id;
         this.totalAmount = totalAmount;

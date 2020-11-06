@@ -7,8 +7,9 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
 
+import com.android.foodmarket.ui.cart.CartActivity;
+import com.android.foodmarket.ui.user.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;

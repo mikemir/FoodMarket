@@ -1,8 +1,11 @@
-package com.android.foodmarket;
+package com.android.foodmarket.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.android.foodmarket.R;
+import com.android.foodmarket.models.Cart;
+import com.android.foodmarket.models.CartItem;
 import com.android.foodmarket.models.Saucer;
 import com.bumptech.glide.Glide;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -55,6 +58,7 @@ public class SaucerDetailsActivity extends AppCompatActivity {
         btAddCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Cart.ITEMS.add(new CartItem(item, 1));
                 Snackbar.make(view, "El platillo " + item.getName() + "a sido agreado a tu carrito de compras.", BaseTransientBottomBar.LENGTH_LONG).show();
             }
         });
