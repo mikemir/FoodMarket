@@ -16,4 +16,16 @@ public class CartItem{
     public Saucer getSaucer(){
         return this.saucer;
     }
+
+    public String getId(){
+        return this.saucer.getId();
+    }
+
+    public int getQuantify(){
+        return this.quantify;
+    }
+
+    public void setQuantify(int quantify) {
+        this.quantify = quantify;
+    }
 }

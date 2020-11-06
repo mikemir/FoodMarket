@@ -68,4 +68,8 @@ public class Saucer {
     public int getImage() {
         return image;
     }
+
+    public String getId() {
+        return id;
+    }
 }
