@@ -33,5 +33,47 @@
     <string name="description_camarones">
         "son las mejores pupusas de queso y de revueltas"
     </string>
+    <string name="description_rosca">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_sandwich">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_sushi">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_lomo">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_cafe">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_coctel">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_jugo">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_cocteljordano">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_vinotinto">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_postrevainilla">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_flancelestial">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_cupcake">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_pastelfresa">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
+    <string name="description_muffinamoroso">
+        "son las mejores pupusas de queso y de revueltas"
+    </string>
 
 </resources>

@@ -35,22 +35,22 @@ public class Saucer {
     static {
         PLATILLOS.add(new Saucer(1.5, "Pupusas tradicionales", R.drawable.pupusas, R.string.description_pupusas));
         PLATILLOS.add(new Saucer(5, "Camarones Tismados", R.drawable.camarones, R.string.description_camarones));
-        PLATILLOS.add(new Saucer(3.2f, "Rosca Herbárea", R.drawable.rosca));
-        PLATILLOS.add(new Saucer(12f, "Sushi Extremo", R.drawable.sushi));
-        PLATILLOS.add(new Saucer(9, "Sandwich Deli", R.drawable.sandwich));
-        PLATILLOS.add(new Saucer(34f, "Lomo De Cerdo Austral", R.drawable.lomo_cerdo));
+        PLATILLOS.add(new Saucer(3.2f, "Rosca Herbárea", R.drawable.rosca, R.string.description_rosca));
+        PLATILLOS.add(new Saucer(12f, "Sushi Extremo", R.drawable.sushi, R.string.description_sushi));
+        PLATILLOS.add(new Saucer(9, "Sandwich Deli", R.drawable.sandwich, R.string.description_sandwich));
+        PLATILLOS.add(new Saucer(34f, "Lomo De Cerdo Austral", R.drawable.lomo_cerdo, R.string.description_lomo));
 
-        BEBIDAS.add(new Saucer(3, "Taza de Café", R.drawable.cafe));
-        BEBIDAS.add(new Saucer(12, "Coctel Tronchatoro", R.drawable.coctel));
-        BEBIDAS.add(new Saucer(5, "Jugo Natural", R.drawable.jugo_natural));
-        BEBIDAS.add(new Saucer(24, "Coctel Jordano", R.drawable.coctel_jordano));
-        BEBIDAS.add(new Saucer(30, "Botella Vino Tinto Darius", R.drawable.vino_tinto));
+        BEBIDAS.add(new Saucer(3, "Taza de Café", R.drawable.cafe, R.string.description_cafe));
+        BEBIDAS.add(new Saucer(12, "Coctel Tronchatoro", R.drawable.coctel, R.string.description_coctel));
+        BEBIDAS.add(new Saucer(5, "Jugo Natural", R.drawable.jugo_natural, R.string.description_jugo));
+        BEBIDAS.add(new Saucer(24, "Coctel Jordano", R.drawable.coctel_jordano, R.string.description_cocteljordano));
+        BEBIDAS.add(new Saucer(30, "Botella Vino Tinto Darius", R.drawable.vino_tinto, R.string.description_vinotinto));
 
-        POSTRES.add(new Saucer(2, "Postre De Vainilla", R.drawable.postre_vainilla));
-        POSTRES.add(new Saucer(3, "Flan Celestial", R.drawable.flan_celestial));
-        POSTRES.add(new Saucer(2.5f, "Cupcake Festival", R.drawable.cupcakes_festival));
-        POSTRES.add(new Saucer(4, "Pastel De Fresa", R.drawable.pastel_fresa));
-        POSTRES.add(new Saucer(5, "Muffin Amoroso", R.drawable.muffin_amoroso));
+        POSTRES.add(new Saucer(2, "Postre De Vainilla", R.drawable.postre_vainilla, R.string.description_postrevainilla));
+        POSTRES.add(new Saucer(3, "Flan Celestial", R.drawable.flan_celestial, R.string.description_flancelestial));
+        POSTRES.add(new Saucer(2.5f, "Cupcake Festival", R.drawable.cupcakes_festival, R.string.description_cupcake));
+        POSTRES.add(new Saucer(4, "Pastel De Fresa", R.drawable.pastel_fresa, R.string.description_pastelfresa));
+        POSTRES.add(new Saucer(5, "Muffin Amoroso", R.drawable.muffin_amoroso, R.string.description_muffinamoroso));
     }
 
     public String getName() {
