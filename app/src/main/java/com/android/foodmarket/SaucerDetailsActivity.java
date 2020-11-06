@@ -18,9 +18,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class SaucerDetailsActivity extends AppCompatActivity {
 
-    TextView tvName, tvAmount;
+    TextView tvName, tvAmount, tvDescription;
     ImageView ivImage;
     FloatingActionButton btAddCart;
 
@@ -40,6 +42,11 @@ public class SaucerDetailsActivity extends AppCompatActivity {
 
         tvName = (TextView) findViewById(R.id.tvName);
         tvName.setText(item.getName());
+
+        tvDescription = (TextView) findViewById(R.id.tvDescription);
+        tvDescription.setText(item.getDescription() > 0
+                              ? getResources().getString(item.getDescription())
+                              : "");
 
         tvAmount = (TextView) findViewById(R.id.tvMount);
         tvAmount.setText("Monto: $" + String.format("%,.2f", item.getPrice()));

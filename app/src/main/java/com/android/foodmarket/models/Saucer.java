@@ -9,7 +9,7 @@ import  com.android.foodmarket.R;
 public class Saucer {
     private String id;
     private String name;
-    private String description;
+    private int description;
     private double price;
     private int image;
 
@@ -20,13 +20,21 @@ public class Saucer {
         this.image = image;
     }
 
+    public Saucer(double price, String name, int image, int description){
+        this.id = UUID.randomUUID().toString();
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.description = description;
+    }
+
     public static final List<Saucer> BEBIDAS = new ArrayList<>();
     public static final List<Saucer> POSTRES = new ArrayList<>();
     public static final List<Saucer> PLATILLOS = new ArrayList<>();
 
     static {
-        PLATILLOS.add(new Saucer(1.5, "Pupusas tradicionales", R.drawable.pupusas));
-        PLATILLOS.add(new Saucer(5, "Camarones Tismados", R.drawable.camarones));
+        PLATILLOS.add(new Saucer(1.5, "Pupusas tradicionales", R.drawable.pupusas, R.string.description_pupusas));
+        PLATILLOS.add(new Saucer(5, "Camarones Tismados", R.drawable.camarones, R.string.description_camarones));
         PLATILLOS.add(new Saucer(3.2f, "Rosca Herbárea", R.drawable.rosca));
         PLATILLOS.add(new Saucer(12f, "Sushi Extremo", R.drawable.sushi));
         PLATILLOS.add(new Saucer(9, "Sandwich Deli", R.drawable.sandwich));
@@ -49,7 +57,7 @@ public class Saucer {
         return name;
     }
 
-    public String getDescription() {
+    public int getDescription() {
         return description;
     }
 
