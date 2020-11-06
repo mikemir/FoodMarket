@@ -43,9 +43,10 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
         CartItem item = items.get(position);
         Saucer saucer = item.getSaucer();
 
-        holder.tvName.setText(saucer.getName());
         String description = context.getResources().getString(saucer.getDescription());
         int limitDescription = description.length() <= 100 ? description.length() : 100;
+
+        holder.tvName.setText(saucer.getName());
         holder.tvDescription.setText(description.substring(0, limitDescription - 1) + "...");
         holder.tvQuantify.setText("x"+ item.getQuantify());
         holder.tvPrice.setText("$" + String.format("%,.2f", item.getTotalPrice()));

@@ -33,4 +33,8 @@ public class Cart {
         }
         return  total;
     }
+
+    public static void clear(){
+        ITEMS.clear();
+    }
 }

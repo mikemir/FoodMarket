@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = getIntent();
+        Intent oldIntent = getIntent();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentx = new Intent(MainActivity.this, CartActivity.class);
-                startActivity(intentx);
+                Intent intent = new Intent(MainActivity.this, CartActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = (TextView) headerView.findViewById(R.id.tvUserLog);
-        navUsername.setText(intent.getStringExtra("emailUser"));
+        navUsername.setText(oldIntent.getStringExtra("emailUser"));
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_orders, R.id.nav_suggestions)
