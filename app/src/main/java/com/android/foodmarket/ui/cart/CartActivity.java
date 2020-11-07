@@ -42,17 +42,8 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         btGoToPay = (Button) findViewById(R.id.btGoToPay);
 
         updateDataShoppingCart();
+        fillRecyclerViewWithItems(Cart.ITEMS);
         btGoToPay.setOnClickListener(this);
-
-        if(Cart.ITEMS.size() == 0){
-            llCartEmpty.setVisibility(View.VISIBLE);
-            rvCart.setVisibility(View.GONE);
-        }
-        else{
-            fillRecyclerViewWithItems();
-            llCartEmpty.setVisibility(View.GONE);
-            rvCart.setVisibility(View.VISIBLE);
-        }
     }
 
     private void updateDataShoppingCart(){
@@ -61,36 +52,46 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         tvTotalAmount.setText("Total: " + "$" + String.format("%,.2f", Cart.getTotalAmount()));
     }
 
-    private void fillRecyclerViewWithItems(){
-        rvCart.setLayoutManager(new LinearLayoutManager(this.getBaseContext()));
-        CartRecyclerViewAdapter adapter = new CartRecyclerViewAdapter(this.getBaseContext(), Cart.ITEMS);
-        adapter.setOnClickListener(new HomeRecyclerViewAdapter.RecyclerViewOnClickListener() {
-            @Override
-            public void onClick(View view, int position) {
-                CartItem item = Cart.ITEMS.get(position);
+    private void fillRecyclerViewWithItems(ArrayList<CartItem> list){
+        if(list.size() == 0){
+            llCartEmpty.setVisibility(View.VISIBLE);
+            rvCart.setVisibility(View.GONE);
+        }
+        else{
+            llCartEmpty.setVisibility(View.GONE);
+            rvCart.setVisibility(View.VISIBLE);
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
-                builder.setTitle("Eliminar platillo.")
-                        .setMessage("¿Desea eliminar el platillo " + item.getSaucer().getName() +"?")
-                        .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                Cart.removeItem(position);
-                                fillRecyclerViewWithItems();
-                                updateDataShoppingCart();
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
+            rvCart.setLayoutManager(new LinearLayoutManager(this.getBaseContext()));
+            CartRecyclerViewAdapter adapter = new CartRecyclerViewAdapter(this.getBaseContext(), list);
 
-                            }
-                        });
+            adapter.setOnClickListener(new HomeRecyclerViewAdapter.RecyclerViewOnClickListener() {
+                @Override
+                public void onClick(View view, int position) {
+                    CartItem item = list.get(position);
 
-                builder.create().show();
-            }
-        });
-        rvCart.setAdapter(adapter);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
+                    builder.setTitle("Eliminar platillo.")
+                            .setMessage("¿Desea eliminar el platillo " + item.getSaucer().getName() +"?")
+                            .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Cart.removeItem(position);
+                                    fillRecyclerViewWithItems(Cart.ITEMS);
+                                    updateDataShoppingCart();
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                }
+                            });
+
+                    builder.create().show();
+                }
+            });
+            rvCart.setAdapter(adapter);
+        }
     }
 
     @Override
@@ -107,7 +108,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 if(Cart.getCount() != 0){
                                     Cart.clear();
-                                    fillRecyclerViewWithItems();
+                                    fillRecyclerViewWithItems(Cart.ITEMS);
                                     updateDataShoppingCart();
                                 }
                             }

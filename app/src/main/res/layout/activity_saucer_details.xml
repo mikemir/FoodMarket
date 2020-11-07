@@ -59,19 +59,24 @@
                 android:layout_height="wrap_content">
 
                 <ImageButton
+                    android:id="@+id/btQuantifyMinus"
                     app:layout_constraintTop_toTopOf="parent"
                     android:background="@color/white"
                     android:src="@drawable/ic_minus"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
                 <EditText
+                    android:id="@+id/etQuantify"
+                    android:inputType="number"
                     android:textAlignment="center"
                     android:text="1"
                     android:layout_width="50dp"
                     android:layout_height="50dp" />
 
                 <ImageButton
+                    android:id="@+id/btQuantifyplus"
+                    app:layout_constraintTop_toTopOf="parent"
                     android:background="@color/white"
                     android:src="@drawable/ic_plus"
                     android:layout_width="wrap_content"
@@ -88,7 +93,7 @@
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
-            android:text="$99.99"
+            android:text="$999.99"
             android:textColor="@color/red_900"
             android:textSize="30sp"
             android:textStyle="italic" />

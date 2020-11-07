@@ -3,7 +3,9 @@ package com.android.foodmarket.ui.user;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -76,8 +78,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         String userEmail = etUserEmail.getText().toString();
 
-        if(userEmail.length() <= 0){
-            etUserEmail.setError("Campo requerido");
+        if(userEmail.length() <= 0|| !Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()){
+            etUserEmail.setError("Email ingresado es inválido.");
             etUserEmail.requestFocus();
             return;
         }
@@ -99,9 +101,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
         if(!User.exist(userEmail)){
-            Snackbar.make(view, "Usuario creado con éxito.", BaseTransientBottomBar.LENGTH_LONG).show();
             User.USERS.add(new User(userEmail, password));
-            clearInputs();
+
+            Snackbar.make(view, "Usuario creado con éxito.", BaseTransientBottomBar.LENGTH_LONG)
+                    .setAction("IR A LOGIN", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).show();
         }
         else{
             etUserEmail.setError("El correo ya se encuentra registrado.");

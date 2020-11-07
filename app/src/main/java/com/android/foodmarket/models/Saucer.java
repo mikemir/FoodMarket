@@ -34,8 +34,8 @@ public class Saucer {
 
     static {
         PLATILLOS.add(new Saucer(1.5, "Pupusas tradicionales", R.drawable.pupusas, R.string.description_pupusas));
-        PLATILLOS.add(new Saucer(5, "Camarones Tismados", R.drawable.camarones, R.string.description_camarones));
-        PLATILLOS.add(new Saucer(3.2f, "Rosca Herbárea", R.drawable.rosca, R.string.description_rosca));
+        PLATILLOS.add(new Saucer(5, "Camarones al Ajillo", R.drawable.camarones, R.string.description_camarones));
+        PLATILLOS.add(new Saucer(3.2f, "Rosca de frutas", R.drawable.rosca, R.string.description_rosca));
         PLATILLOS.add(new Saucer(12f, "Sushi Extremo", R.drawable.sushi, R.string.description_sushi));
         PLATILLOS.add(new Saucer(9, "Sandwich Deli", R.drawable.sandwich, R.string.description_sandwich));
         PLATILLOS.add(new Saucer(34f, "Lomo De Cerdo Austral", R.drawable.lomo_cerdo, R.string.description_lomo));
