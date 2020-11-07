@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="5dp"
@@ -21,7 +22,7 @@
             android:src="@drawable/ic_dinner" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:padding="5dp"
+            android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -38,34 +39,44 @@
 
             <TextView
                 android:id="@+id/tvDescription"
-                app:layout_constraintTop_toBottomOf="@id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:text="Descripcion"
                 android:textColor="@color/secondary_text"
                 android:textSize="11sp"
-                android:text="Descripcion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                app:layout_constraintTop_toBottomOf="@id/tvName"
+                tools:layout_editor_absoluteX="5dp" />
 
             <TextView
                 android:id="@+id/tvQuantify"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="5dp"
-                android:textColor="@color/secondary_text"
-                android:text="x2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="x2"
+                android:textColor="@color/secondary_text"
+                app:layout_constraintBottom_toTopOf="@+id/tvMount"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/tvMount"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 android:textColor="@color/red_700"
                 android:textAlignment="textEnd"
                 android:layout_marginEnd="10dp"
                 android:textSize="16sp"
                 android:text="Monto: $84.99"
                 android:textStyle="italic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:id="@+id/btDeleteItem"
+                android:padding="5dp"
+                android:background="@color/red_700"
+                android:src="@drawable/ic_delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

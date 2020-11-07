@@ -1,5 +1,7 @@
 package com.android.foodmarket.models;
 
+import androidx.annotation.Nullable;
+
 public class CartItem{
     private Saucer saucer;
     private int quantify;
@@ -27,5 +29,16 @@ public class CartItem{
 
     public void setQuantify(int quantify) {
         this.quantify = quantify;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.getId().hashCode();
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        CartItem item = (CartItem) obj;
+        return item.getId().equals(this.getId());
     }
 }

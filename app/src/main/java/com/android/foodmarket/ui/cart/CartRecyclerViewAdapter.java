@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import com.android.foodmarket.R;
 import com.android.foodmarket.models.Cart;
 import com.android.foodmarket.models.CartItem;
 import com.android.foodmarket.models.Saucer;
+import com.android.foodmarket.ui.home.HomeRecyclerViewAdapter;
 import com.android.foodmarket.ui.orders.OrdersRecyclerViewAdapter;
 import com.bumptech.glide.Glide;
 
@@ -23,6 +25,7 @@ import java.util.List;
 
 public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerViewAdapter.ViewHolder> {
 
+    private HomeRecyclerViewAdapter.RecyclerViewOnClickListener listener;
     private final ArrayList<CartItem> items;
     private final Context context;
 
@@ -55,6 +58,13 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
                 .load(saucer.getImage())
                 .centerCrop()
                 .into(holder.ivImage);
+
+        holder.btDeleteItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick(view, position);
+            }
+        });
     }
 
     @Override
@@ -62,12 +72,19 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
         return items.size();
     }
 
+    public void setOnClickListener(HomeRecyclerViewAdapter.RecyclerViewOnClickListener listener){
+        this.listener = listener;
+    }
+
+    public interface RecyclerViewOnClickListener{
+        void onClick(View view, int position);
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView tvName;
-        public TextView tvDescription;
-        public TextView tvQuantify;
-        public TextView tvPrice;
+        public TextView tvName, tvDescription;
+        public TextView tvQuantify, tvPrice;
         public ImageView ivImage;
+        public ImageButton btDeleteItem;
 
         public ViewHolder(View view) {
             super(view);
@@ -76,6 +93,7 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
             tvQuantify = (TextView) view.findViewById(R.id.tvQuantify);
             tvPrice = (TextView) view.findViewById(R.id.tvMount);
             ivImage = (ImageView) view.findViewById(R.id.ivImage);
+            btDeleteItem = (ImageButton) view.findViewById(R.id.btDeleteItem);
         }
     }
 }

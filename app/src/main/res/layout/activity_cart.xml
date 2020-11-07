@@ -76,7 +76,7 @@
         <TextView
             android:id="@+id/tvTotalAmount"
             android:textSize="25sp"
-            android:textStyle="italic"
+            android:textStyle="italic|bold"
             android:textColor="@color/red_900"
             android:textAlignment="textEnd"
             android:layout_marginTop="10dp"
